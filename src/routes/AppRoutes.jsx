@@ -1,11 +1,11 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
-import { LoginPage } from '../pages/LoginPage'
-import { SystemHealthPage } from '../pages/SystemHealthPage'
-import { CameraManagementPage } from '../pages/CameraManagementPage'
-import { UserManagementPage } from '../pages/UserManagementPage'
-import { SettingsPage } from '../pages/SettingsPage'
+import { LoginPage } from '../features/authentication/pages/LoginPage'
+import { SystemHealthPage } from '../features/systemHealth/pages/SystemHealthPage'
+import { CameraManagementPage } from '../features/cameraManagement/pages/CameraManagementPage'
+import { UserManagementPage } from '../features/userManagement/pages/UserManagementPage'
+import { SettingsPage } from '../features/settings/pages/SettingsPage'
 import { DashboardLayout } from '../layouts/DashboardLayout'
-import { useAuth } from '../context/AuthContext'
+import { useAuth } from '../features/authentication/context/AuthContext'
 
 function ProtectedRoute({ children }) {
   const { isAuthenticated } = useAuth()

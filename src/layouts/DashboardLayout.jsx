@@ -1,8 +1,8 @@
 import { Outlet, useLocation } from 'react-router-dom'
-import { Sidebar } from '../components/common/Sidebar'
-import { TopBar } from '../components/TopBar'
-import { useAuth } from '../context/AuthContext'
-import { roleMenus } from '../api/mockData'
+import { Sidebar } from '../components/Sidebar/Sidebar'
+import { TopBar } from '../components/TopBar/TopBar'
+import { useAuth } from '../features/authentication/context/AuthContext'
+import { roleMenus } from '../services/mockData'
 
 const titles = {
   '/dashboard': ['System Health', 'Live operational telemetry from AI cameras, edge devices, and backend services.'],
