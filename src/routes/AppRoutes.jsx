@@ -4,10 +4,8 @@ import { SystemHealthPage } from '../features/systemHealth/pages/SystemHealthPag
 import { CameraManagementPage } from '../features/cameraManagement/pages/CameraManagementPage'
 import { UserManagementPage } from '../features/userManagement/pages/UserManagementPage'
 import { SettingsPage } from '../features/settings/pages/SettingsPage'
-import { ProjectManagerHomePage } from '../features/projectManager/pages/ProjectManagerHomePage'
 import { DashboardLayout } from '../layouts/DashboardLayout'
 import { useAuth } from '../features/authentication/context/AuthContext'
-import { ROLES } from '../utils/constants'
 
 function ProtectedRoute({ children }) {
   const { isAuthenticated } = useAuth()

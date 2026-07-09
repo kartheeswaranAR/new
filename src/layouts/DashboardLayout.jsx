@@ -3,7 +3,6 @@ import { Sidebar } from '../components/Sidebar/Sidebar'
 import { TopBar } from '../components/TopBar/TopBar'
 import { useAuth } from '../features/authentication/context/AuthContext'
 import { roleMenus } from '../services/mockData'
-import { ROLES } from '../utils/constants'
 
 const titles = {
   '/dashboard': ['System Health', 'Live operational telemetry from AI cameras, edge devices, and backend services.'],
