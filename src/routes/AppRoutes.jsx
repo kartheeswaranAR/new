@@ -1,5 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { LoginPage } from '../features/authentication/pages/LoginPage'
+import { ProfilePage } from '../features/authentication/pages/ProfilePage'
+import { DashboardPage } from '../features/dashboard/pages/DashboardPage'
 import { SystemHealthPage } from '../features/systemHealth/pages/SystemHealthPage'
 import { CameraManagementPage } from '../features/cameraManagement/pages/CameraManagementPage'
 import { UserManagementPage } from '../features/userManagement/pages/UserManagementPage'
@@ -25,11 +27,13 @@ export function AppRoutes() {
           </ProtectedRoute>
         }
       >
-        <Route index element={<SystemHealthPage />} />
+        <Route index element={<DashboardPage />} />
+        <Route path="dashboard" element={<DashboardPage />} />
         <Route path="system-health" element={<SystemHealthPage />} />
         <Route path="camera-management" element={<CameraManagementPage />} />
         <Route path="user-management" element={<UserManagementPage />} />
         <Route path="settings" element={<SettingsPage />} />
+        <Route path="profile" element={<ProfilePage />} />
       </Route>
       <Route path="*" element={<Navigate to="/login" replace />} />
     </Routes>
