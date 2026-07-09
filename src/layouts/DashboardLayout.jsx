@@ -10,12 +10,22 @@ const titles = {
   '/dashboard/camera-management': ['Camera Management', 'Click any site card to open a camera view, control feed, or capture media.'],
   '/dashboard/user-management': ['User Management', 'RBAC, employee profiles, and access control are centralized here.'],
   '/dashboard/settings': ['Settings', 'Environment, security, retention, and platform configuration are controlled here.'],
+  '/dashboard/camera': ['Camera', ''],
+  '/dashboard/alert': ['Alert', ''],
+  '/dashboard/report': ['Report', ''],
+  '/dashboard/message': ['Message', ''],
 }
 
 export function DashboardLayout() {
   const { user, logout } = useAuth()
   const location = useLocation()
-  const [title, subtitle] = titles[location.pathname] ?? titles['/dashboard']
+  const isBlankRole =
+    user?.role === ROLES.PROJECT_MANAGER ||
+    user?.role === ROLES.SITE_SUPERVISOR ||
+    user?.role === ROLES.SITE_ENGINEER ||
+    user?.role === ROLES.SAFETY_MANAGER ||
+    user?.role === ROLES.SAFETY_OFFICER
+  const [title, subtitle] = isBlankRole ? ['', ''] : (titles[location.pathname] ?? titles['/dashboard'])
   const menus = roleMenus[user?.role] ?? roleMenus.Admin
 
   return (
