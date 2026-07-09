@@ -3,7 +3,7 @@ import { MenuItem } from '../MenuItem/MenuItem'
 import './SidebarMenu.css'
 
 const iconMap = {
-  Dashboard: <FaTachometerAlt />,
+  'Dashboard': <FaTachometerAlt />,
   'System Health': <FaShieldAlt />,
   'Camera Management': <FaCamera />,
   'User Management': <FaUsers />,

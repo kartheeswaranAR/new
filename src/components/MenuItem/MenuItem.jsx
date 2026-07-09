@@ -3,12 +3,13 @@ import { FaTachometerAlt } from 'react-icons/fa'
 import './MenuItem.css'
 
 export function MenuItem({ menu, icon }) {
-  const path = menu === 'Dashboard' ? '/dashboard' : `/dashboard/${menu.toLowerCase().replace(/\s+/g, '-')}`
+  const normalizedMenu = (menu || '').toLowerCase()
+  const path = normalizedMenu === 'dashboard' ? '/dashboard' : `/dashboard/${normalizedMenu.replace(/\s+/g, '-')}`
 
   return (
     <NavLink
       to={path}
-      end={menu === 'Dashboard'}
+      end={normalizedMenu === 'dashboard'}
       className={({ isActive }) => `nav-item ${isActive ? 'active' : ''}`}
     >
       <span className="nav-icon">{icon ?? <FaTachometerAlt />}</span>

@@ -10,10 +10,14 @@
 .sidebar-shell,
 .main-shell,
 .glass-card {
-  background: linear-gradient(180deg, rgba(10, 17, 36, 0.92), rgba(8, 12, 24, 0.86));
+  background: var(--panel-gradient);
   border: 1px solid var(--stroke);
   box-shadow: var(--shadow);
   backdrop-filter: blur(18px);
+}
+
+.main-shell {
+  background-image: radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 28%), radial-gradient(circle at bottom right, rgba(255, 87, 210, 0.16), transparent 24%);
 }
 
 .main-shell {
@@ -91,7 +95,7 @@
 .card-heading {
   font-weight: 600;
   margin-bottom: 8px;
-  color: #f7fbff;
+  color: var(--text);
 }
 
 .site-row {
@@ -277,7 +281,7 @@
   background:
     radial-gradient(circle at top left, rgba(79, 70, 229, 0.18), transparent 30%),
     radial-gradient(circle at bottom right, rgba(99, 102, 241, 0.14), transparent 26%),
-    #11162a;
+    var(--bg);
 }
 
 .login-shell {

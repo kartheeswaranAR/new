@@ -1,4 +1,7 @@
-import { DEFAULT_ROLE, DEMO_EMAIL, DEMO_PASSWORD, ROLES } from '../utils/constants'
+import { DEMO_EMAIL, DEMO_PASSWORD } from '../utils/constants'
+import { ROLES } from '../types'
+
+export const DEFAULT_ROLE = ROLES.ADMIN
 
 export const mockUser = {
   id: 'u-admin-001',
@@ -10,13 +13,12 @@ export const mockUser = {
 }
 
 export const roleMenus = {
-  [ROLES.ADMIN]: ['System Health', 'Camera Management', 'User Management', 'Settings'],
+  [ROLES.ADMIN]: ['Dashboard', 'System Health', 'Camera Management', 'User Management', 'Settings'],
   [ROLES.PROJECT_MANAGER]: ['Dashboard', 'System Health', 'Camera Management', 'Settings'],
   [ROLES.SITE_ENGINEER]: ['Dashboard', 'Camera Management', 'System Health'],
   [ROLES.SAFETY_MANAGER]: ['Dashboard', 'System Health', 'Camera Management'],
   [ROLES.SAFETY_OFFICER]: ['Dashboard', 'Camera Management'],
-  [ROLES.HITL_REVIEWER]: ['Dashboard', 'System Health'],
-  [ROLES.AI_ENGINEER]: ['Dashboard', 'System Health', 'Settings'],
+  [ROLES.HITL]: ['Dashboard', 'System Health'],
   [ROLES.CLIENT]: ['Dashboard', 'System Health'],
 }
 
