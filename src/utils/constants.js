@@ -1,6 +1,8 @@
-export const APP_NAME = 'Larsen & Toubro'
-export const APP_SUBTITLE = 'AI-Driven Road Safety & Quality Monitoring Platform'
-export const DEMO_EMAIL = 'admin@gmail.com'
+export const APP_NAME = 'L&T AI Monitor'
+export const APP_SUBTITLE = 'AI-Driven Construction Progress Monitoring Platform'
+export const APP_VERSION = '2.0.0'
+
+export const DEMO_EMAIL = 'admin@lt.com'
 export const DEMO_PASSWORD = 'Admin@1234'
 export const DEMO_PHONE = '9000000000'
 export const DEMO_LT_ID = 'LTADMIN01'
@@ -49,4 +51,11 @@ export const ROLES = {
   CLIENT: 'Client',
 }
 
-export const DEFAULT_ROLE = ROLES.ADMIN
+export const DATE_FORMAT = 'dd MMM yyyy'
+export const DATETIME_FORMAT = 'dd MMM yyyy HH:mm'
+export const TIME_FORMAT = 'HH:mm'
+
+export const PAGINATION_LIMIT = 20
+
+export const MAP_CENTER = [20.5937, 78.9629]
+export const MAP_ZOOM = 5

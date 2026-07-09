@@ -1,4 +1,4 @@
-import { Outlet, useLocation } from 'react-router-dom'
+import { Outlet, useLocation, useNavigate } from 'react-router-dom'
 import { Sidebar } from '../components/Sidebar/Sidebar'
 import { TopBar } from '../components/TopBar/TopBar'
 import { useAuth } from '../features/authentication/context/AuthContext'
@@ -10,10 +10,7 @@ const titles = {
   '/dashboard/camera-management': ['Camera Management', 'Click any site card to open a camera view, control feed, or capture media.'],
   '/dashboard/user-management': ['User Management', 'RBAC, employee profiles, and access control are centralized here.'],
   '/dashboard/settings': ['Settings', 'Environment, security, retention, and platform configuration are controlled here.'],
-  '/dashboard/camera': ['Camera', ''],
-  '/dashboard/alert': ['Alert', ''],
-  '/dashboard/report': ['Report', ''],
-  '/dashboard/message': ['Message', ''],
+  '/dashboard/profile': ['My Profile', 'Manage the account information shown across your dashboard workspace.'],
 }
 
 export function DashboardLayout() {
@@ -30,7 +27,7 @@ export function DashboardLayout() {
 
   return (
     <div className="app-shell">
-      <Sidebar menus={menus} user={user} onLogout={logout} />
+      <Sidebar menus={menus} user={user} onLogout={logout} onProfileClick={() => navigate('/dashboard/profile')} />
       <main className="main-shell">
         <TopBar user={user} title={title} subtitle={subtitle} onRefresh={() => window.location.reload()} />
         <Outlet />

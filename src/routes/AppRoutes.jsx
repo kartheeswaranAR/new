@@ -1,5 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { LoginPage } from '../features/authentication/pages/LoginPage'
+import { ProfilePage } from '../features/authentication/pages/ProfilePage'
+import { DashboardPage } from '../features/dashboard/pages/DashboardPage'
 import { SystemHealthPage } from '../features/systemHealth/pages/SystemHealthPage'
 import { CameraManagementPage } from '../features/cameraManagement/pages/CameraManagementPage'
 import { UserManagementPage } from '../features/userManagement/pages/UserManagementPage'
@@ -50,6 +52,7 @@ export function AppRoutes() {
         <Route path="report" element={<ProjectManagerHomePage />} />
         <Route path="message" element={<ProjectManagerHomePage />} />
         <Route path="settings" element={<SettingsPage />} />
+        <Route path="profile" element={<ProfilePage />} />
       </Route>
       <Route path="*" element={<Navigate to="/login" replace />} />
     </Routes>
