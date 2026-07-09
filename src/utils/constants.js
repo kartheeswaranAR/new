@@ -4,27 +4,51 @@ export const APP_VERSION = '2.0.0'
 
 export const DEMO_EMAIL = 'admin@lt.com'
 export const DEMO_PASSWORD = 'Admin@1234'
-export const TOKEN_KEY = 'lt_token'
-export const USER_KEY = 'lt_user'
-export const FILTER_KEY = 'lt_filters'
+export const DEMO_PHONE = '9000000000'
+export const DEMO_LT_ID = 'LTADMIN01'
 
-export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api'
+export const PM_NAME = 'Jaidev'
+export const PM_EMAIL = 'pm@gmail.com'
+export const PM_PASSWORD = 'Project@1234'
+export const PM_PHONE = '8870672181'
+export const PM_LT_ID = 'L&TPM01'
 
-export const CHART_COLORS = {
-  primary: '#2563EB',
-  success: '#2CFF05',
-  warning: '#FF8624',
-  danger: '#FF272A',
-  purple: '#FF57D2',
-  yellow: '#FFDA29',
-  cyan: '#00D7FF',
-  muted: '#94A3B8',
-}
+export const SS_NAME = 'Shanmugavel'
+export const SS_EMAIL = 's@gmail.com'
+export const SS_PASSWORD = 'Super@1234'
+export const SS_PHONE = '8870672182'
+export const SS_LT_ID = 'L&TS01'
 
-export const REFRESH_INTERVALS = {
-  FAST: 10000,
-  NORMAL: 30000,
-  SLOW: 60000,
+export const SE_NAME = 'Adhiraj'
+export const SE_EMAIL = 'e@gmail.com'
+export const SE_PASSWORD = 'Eng@1234'
+export const SE_PHONE = '8870672183'
+export const SE_LT_ID = 'L&TE01'
+
+export const SM_NAME = 'Jayanitha'
+export const SM_EMAIL = 'sm@gmail.com'
+export const SM_PASSWORD = 'Safem@1234'
+export const SM_PHONE = '8870672184'
+export const SM_LT_ID = 'L&TSM01'
+
+export const SO_NAME = 'Priyadharshini'
+export const SO_EMAIL = 'sm@gmail.com'
+export const SO_PASSWORD = 'Safeo@1234'
+export const SO_PHONE = '8870672185'
+export const SO_LT_ID = 'L&TSO01'
+export const TOKEN_KEY = 'lt_platform_token'
+export const USER_KEY = 'lt_platform_user'
+
+export const ROLES = {
+  ADMIN: 'Admin',
+  PROJECT_MANAGER: 'Project Manager',
+  SITE_SUPERVISOR: 'Site Supervisor',
+  SITE_ENGINEER: 'Site Engineer',
+  SAFETY_MANAGER: 'Safety Manager',
+  SAFETY_OFFICER: 'Safety Officer',
+  HITL_REVIEWER: 'HITL Reviewer',
+  AI_ENGINEER: 'AI Engineer',
+  CLIENT: 'Client',
 }
 
 export const DATE_FORMAT = 'dd MMM yyyy'

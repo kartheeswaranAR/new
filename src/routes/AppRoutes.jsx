@@ -15,6 +15,22 @@ function ProtectedRoute({ children }) {
   return children
 }
 
+function DashboardIndexRoute() {
+  const { user } = useAuth()
+
+  if (
+    user?.role === ROLES.PROJECT_MANAGER ||
+    user?.role === ROLES.SITE_SUPERVISOR ||
+    user?.role === ROLES.SITE_ENGINEER ||
+    user?.role === ROLES.SAFETY_MANAGER ||
+    user?.role === ROLES.SAFETY_OFFICER
+  ) {
+    return <ProjectManagerHomePage />
+  }
+
+  return <SystemHealthPage />
+}
+
 export function AppRoutes() {
   return (
     <Routes>
@@ -27,11 +43,14 @@ export function AppRoutes() {
           </ProtectedRoute>
         }
       >
-        <Route index element={<DashboardPage />} />
-        <Route path="dashboard" element={<DashboardPage />} />
+        <Route index element={<DashboardIndexRoute />} />
         <Route path="system-health" element={<SystemHealthPage />} />
         <Route path="camera-management" element={<CameraManagementPage />} />
         <Route path="user-management" element={<UserManagementPage />} />
+        <Route path="camera" element={<ProjectManagerHomePage />} />
+        <Route path="alert" element={<ProjectManagerHomePage />} />
+        <Route path="report" element={<ProjectManagerHomePage />} />
+        <Route path="message" element={<ProjectManagerHomePage />} />
         <Route path="settings" element={<SettingsPage />} />
         <Route path="profile" element={<ProfilePage />} />
       </Route>
