@@ -18,7 +18,13 @@ function ProtectedRoute({ children }) {
 function DashboardIndexRoute() {
   const { user } = useAuth()
 
-  if (user?.role === ROLES.PROJECT_MANAGER) {
+  if (
+    user?.role === ROLES.PROJECT_MANAGER ||
+    user?.role === ROLES.SITE_SUPERVISOR ||
+    user?.role === ROLES.SITE_ENGINEER ||
+    user?.role === ROLES.SAFETY_MANAGER ||
+    user?.role === ROLES.SAFETY_OFFICER
+  ) {
     return <ProjectManagerHomePage />
   }
 

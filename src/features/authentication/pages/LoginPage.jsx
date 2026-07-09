@@ -13,6 +13,26 @@ import {
   PM_NAME,
   PM_PASSWORD,
   PM_PHONE,
+  SE_EMAIL,
+  SE_LT_ID,
+  SE_NAME,
+  SE_PASSWORD,
+  SE_PHONE,
+  SM_EMAIL,
+  SM_LT_ID,
+  SM_NAME,
+  SM_PASSWORD,
+  SM_PHONE,
+  SO_EMAIL,
+  SO_LT_ID,
+  SO_NAME,
+  SO_PASSWORD,
+  SO_PHONE,
+  SS_EMAIL,
+  SS_LT_ID,
+  SS_NAME,
+  SS_PASSWORD,
+  SS_PHONE,
 } from '../../../utils/constants'
 import { useAuth } from '../context/AuthContext'
 import ltLogo from '../../../assets/logos/lt-logo.png'
@@ -139,6 +159,50 @@ export function LoginPage() {
               <strong>{PM_LT_ID}</strong>
               <span>Password:</span>
               <strong>{PM_PASSWORD}</strong>
+
+              <span>Site Supervisor:</span>
+              <strong>{SS_NAME}</strong>
+              <span>Email:</span>
+              <strong>{SS_EMAIL}</strong>
+              <span>Phone:</span>
+              <strong>{SS_PHONE}</strong>
+              <span>L&amp;T ID:</span>
+              <strong>{SS_LT_ID}</strong>
+              <span>Password:</span>
+              <strong>{SS_PASSWORD}</strong>
+
+              <span>Site Engineer:</span>
+              <strong>{SE_NAME}</strong>
+              <span>Email:</span>
+              <strong>{SE_EMAIL}</strong>
+              <span>Phone:</span>
+              <strong>{SE_PHONE}</strong>
+              <span>L&amp;T ID:</span>
+              <strong>{SE_LT_ID}</strong>
+              <span>Password:</span>
+              <strong>{SE_PASSWORD}</strong>
+
+              <span>Safety Manager:</span>
+              <strong>{SM_NAME}</strong>
+              <span>Email:</span>
+              <strong>{SM_EMAIL}</strong>
+              <span>Phone:</span>
+              <strong>{SM_PHONE}</strong>
+              <span>L&amp;T ID:</span>
+              <strong>{SM_LT_ID}</strong>
+              <span>Password:</span>
+              <strong>{SM_PASSWORD}</strong>
+
+              <span>Safety Officer:</span>
+              <strong>{SO_NAME}</strong>
+              <span>Email:</span>
+              <strong>{SO_EMAIL}</strong>
+              <span>Phone:</span>
+              <strong>{SO_PHONE}</strong>
+              <span>L&amp;T ID:</span>
+              <strong>{SO_LT_ID}</strong>
+              <span>Password:</span>
+              <strong>{SO_PASSWORD}</strong>
             </div>
 
             {message ? <div className="form-message"><FaLock /> {message}</div> : null}

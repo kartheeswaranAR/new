@@ -20,8 +20,13 @@ const titles = {
 export function DashboardLayout() {
   const { user, logout } = useAuth()
   const location = useLocation()
-  const isProjectManager = user?.role === ROLES.PROJECT_MANAGER
-  const [title, subtitle] = isProjectManager ? ['', ''] : (titles[location.pathname] ?? titles['/dashboard'])
+  const isBlankRole =
+    user?.role === ROLES.PROJECT_MANAGER ||
+    user?.role === ROLES.SITE_SUPERVISOR ||
+    user?.role === ROLES.SITE_ENGINEER ||
+    user?.role === ROLES.SAFETY_MANAGER ||
+    user?.role === ROLES.SAFETY_OFFICER
+  const [title, subtitle] = isBlankRole ? ['', ''] : (titles[location.pathname] ?? titles['/dashboard'])
   const menus = roleMenus[user?.role] ?? roleMenus.Admin
 
   return (

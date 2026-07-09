@@ -9,6 +9,26 @@ import {
   PM_NAME,
   PM_PASSWORD,
   PM_PHONE,
+  SS_EMAIL,
+  SS_LT_ID,
+  SS_NAME,
+  SS_PASSWORD,
+  SS_PHONE,
+  SE_EMAIL,
+  SE_LT_ID,
+  SE_NAME,
+  SE_PASSWORD,
+  SE_PHONE,
+  SM_EMAIL,
+  SM_LT_ID,
+  SM_NAME,
+  SM_PASSWORD,
+  SM_PHONE,
+  SO_EMAIL,
+  SO_LT_ID,
+  SO_NAME,
+  SO_PASSWORD,
+  SO_PHONE,
   ROLES,
 } from '../utils/constants'
 
@@ -33,12 +53,57 @@ export const projectManagerUser = {
   project: 'L&T Central Monitoring Program',
 }
 
+export const siteSupervisorUser = {
+  id: 'u-ss-001',
+  name: SS_NAME,
+  email: SS_EMAIL,
+  phone: SS_PHONE,
+  ltId: SS_LT_ID,
+  role: ROLES.SITE_SUPERVISOR,
+  designation: ROLES.SITE_SUPERVISOR,
+  project: 'L&T Central Monitoring Program',
+}
+
+export const siteEngineerUser = {
+  id: 'u-se-001',
+  name: SE_NAME,
+  email: SE_EMAIL,
+  phone: SE_PHONE,
+  ltId: SE_LT_ID,
+  role: ROLES.SITE_ENGINEER,
+  designation: ROLES.SITE_ENGINEER,
+  project: 'L&T Central Monitoring Program',
+}
+
+export const safetyManagerUser = {
+  id: 'u-sm-001',
+  name: SM_NAME,
+  email: SM_EMAIL,
+  phone: SM_PHONE,
+  ltId: SM_LT_ID,
+  role: ROLES.SAFETY_MANAGER,
+  designation: ROLES.SAFETY_MANAGER,
+  project: 'L&T Central Monitoring Program',
+}
+
+export const safetyOfficerUser = {
+  id: 'u-so-001',
+  name: SO_NAME,
+  email: SO_EMAIL,
+  phone: SO_PHONE,
+  ltId: SO_LT_ID,
+  role: ROLES.SAFETY_OFFICER,
+  designation: ROLES.SAFETY_OFFICER,
+  project: 'L&T Central Monitoring Program',
+}
+
 export const roleMenus = {
   [ROLES.ADMIN]: ['System Health', 'Camera Management', 'User Management', 'Settings'],
   [ROLES.PROJECT_MANAGER]: ['Dashboard', 'Camera', 'Alert', 'Report', 'Message', 'Settings'],
-  [ROLES.SITE_ENGINEER]: ['Dashboard', 'Camera Management', 'System Health'],
-  [ROLES.SAFETY_MANAGER]: ['Dashboard', 'System Health', 'Camera Management'],
-  [ROLES.SAFETY_OFFICER]: ['Dashboard', 'Camera Management'],
+  [ROLES.SITE_SUPERVISOR]: ['Dashboard', 'Camera', 'Alert', 'Report', 'Message', 'Settings'],
+  [ROLES.SITE_ENGINEER]: ['Dashboard', 'Camera', 'Alert', 'Report', 'Message', 'Settings'],
+  [ROLES.SAFETY_MANAGER]: ['Dashboard', 'Camera', 'Alert', 'Report', 'Message', 'Settings'],
+  [ROLES.SAFETY_OFFICER]: ['Dashboard', 'Camera', 'Alert', 'Report', 'Message', 'Settings'],
   [ROLES.HITL_REVIEWER]: ['Dashboard', 'System Health'],
   [ROLES.AI_ENGINEER]: ['Dashboard', 'System Health', 'Settings'],
   [ROLES.CLIENT]: ['Dashboard', 'System Health'],
@@ -148,6 +213,42 @@ export function loginWithDemoFallback(identifier, password) {
 
   if (pmMatchesIdentifier && password === PM_PASSWORD) {
     return { token: 'demo-pm-jwt-token', user: projectManagerUser }
+  }
+
+  const ssMatchesIdentifier =
+    normalized === SS_EMAIL ||
+    normalizedNoSpaces === SS_PHONE ||
+    normalizedLtId === SS_LT_ID.toLowerCase().replace(/&/g, '')
+
+  if (ssMatchesIdentifier && password === SS_PASSWORD) {
+    return { token: 'demo-ss-jwt-token', user: siteSupervisorUser }
+  }
+
+  const seMatchesIdentifier =
+    normalized === SE_EMAIL ||
+    normalizedNoSpaces === SE_PHONE ||
+    normalizedLtId === SE_LT_ID.toLowerCase().replace(/&/g, '')
+
+  if (seMatchesIdentifier && password === SE_PASSWORD) {
+    return { token: 'demo-se-jwt-token', user: siteEngineerUser }
+  }
+
+  const smMatchesIdentifier =
+    normalized === SM_EMAIL ||
+    normalizedNoSpaces === SM_PHONE ||
+    normalizedLtId === SM_LT_ID.toLowerCase().replace(/&/g, '')
+
+  if (smMatchesIdentifier && password === SM_PASSWORD) {
+    return { token: 'demo-sm-jwt-token', user: safetyManagerUser }
+  }
+
+  const soMatchesIdentifier =
+    normalized === SO_EMAIL ||
+    normalizedNoSpaces === SO_PHONE ||
+    normalizedLtId === SO_LT_ID.toLowerCase().replace(/&/g, '')
+
+  if (soMatchesIdentifier && password === SO_PASSWORD) {
+    return { token: 'demo-so-jwt-token', user: safetyOfficerUser }
   }
 
   throw new Error('Invalid credentials. Use the demo account or connect the backend API.')
